@@ -8,12 +8,11 @@ import lombok.Setter;
 @Setter
 public class Post {
     private final String text;
-    private final int likes;
+    private int likes;
     private Date creationDate;
 
-    public Post(String text, int likes, Date creationDate) {
+    public Post(String text,  Date creationDate) {
         this.text = text;
-        this.likes = likes;
         this.creationDate = new Date();
     }
 }
