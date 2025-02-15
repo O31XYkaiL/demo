@@ -19,7 +19,7 @@ public class PostsViewController {
 
     @GetMapping("/")
     public String list(Model model) {
-        model.addAttribute("posts", postService.listAllPosts()); // Исправлено на "posts"
+        model.addAttribute("posts", postService.listAllPosts());
         return "list";
     }
 
