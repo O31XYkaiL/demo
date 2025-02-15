@@ -7,16 +7,17 @@ import java.util.*;
 
 @Service
 public class PostService {
-    List<Post> posts = new ArrayList<>(List.of(
-            new Post("1 January", Calendar.getInstance().getTime()),
-            new Post("14th February", Calendar.getInstance().getTime()),
-            new Post("8th March", Calendar.getInstance().getTime())));
+    private final List<Post> posts = new ArrayList<>(List.of(
+            new Post(0L, "1 January", Calendar.getInstance().getTime()),
+            new Post(1L, "14th February", Calendar.getInstance().getTime()),
+            new Post(2L, "8th March", Calendar.getInstance().getTime())));
 
     public List<Post> listAllPosts() {
         return posts;
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        Long newId = (long) posts.size();
+        posts.add(new Post(newId, text, new Date()));
     }
 }
